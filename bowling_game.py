@@ -32,7 +32,7 @@ class BowlingGame:
             which was causing the failed tests on test strike and bonus, test spare 
             and bonus and test open frame 10. Have changed the above range from 9 to 
             10 to include all frames to calculate a correct score. This resulted in 
-            three of the five failing tests resulting in a pass.
+            two of the four failing tests resulting in a pass.
             """
             if self._is_strike(frame_index):
                 # Strike
