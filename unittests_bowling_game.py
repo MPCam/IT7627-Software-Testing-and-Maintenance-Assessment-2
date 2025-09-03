@@ -10,8 +10,8 @@ the tests are:
 3. Test current roll
 4. Test strike and bonus
 5. Test spare and bonus
-6. Test frame one
-7. Test frame ten
+6. Test open frame one
+7. Test open frame ten
 """
 from bowling_game import BowlingGame
 import unittest

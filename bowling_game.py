@@ -27,6 +27,13 @@ class BowlingGame:
         frame_index = 0
 
         for frame in range(10):
+            """
+            The tests showed that some were not calculating the final 10th frame 
+            which was causing the failed tests on test strike and bonus, test spare 
+            and bonus and test open frame 10. Have changed the above range from 9 to 
+            10 to include all frames to calculate a correct score. This resulted in 
+            three of the five failing tests resulting in a pass.
+            """
             if self._is_strike(frame_index):
                 # Strike
                 score += 10 + self._strike_bonus(frame_index)
@@ -38,6 +45,14 @@ class BowlingGame:
             else:
                 # Open frame
                 score += self.rolls[frame_index] + self.rolls[frame_index + 1]
+                """
+                The final two tests showed that the issue was resulting from the 
+                calculation of a open frame and the second roll in the frame was not
+                being recorder. I have fixed this by adding + self.rolls[frame_index + 1]
+                to the above which resulted in both rolls in a open frame being added to the
+                final score. The last two tests have now passed with no outstanding failed
+                tests.
+                """
                 frame_index += 2
 
         return score
